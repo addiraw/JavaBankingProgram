@@ -1,7 +1,9 @@
 package BankingSystem;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 public class BankingScreen {
    
     public static void main(String args[]){
@@ -9,17 +11,42 @@ public class BankingScreen {
     Withdraw withdraw=null;
     Deposit deposit=null;
     CreateCustomer createCustomer=null;
-            String dispay = "Welcome to SBI banking";
-            System.out.println(dispay);
+            String display = "Welcome to SBI banking";
+            String newDisplay = display.concat(" Please Enter the card");
+            String newDisplay1 = display.concat(".").concat(newDisplay);
+            String newDisplay2 = newDisplay1.replace("Welcome"," Welcome");
+            String newDisplay3 = newDisplay2.concat(".");
+            String newDisplay4 = newDisplay3.replace(" Welcome","Welcome");
+            String newsDisplay5 = newDisplay4.replace("Welcome to SBI banking.","Welcome to SBI banking. ");
+            System.out.println(newsDisplay5);
+            System.out.println("\n");
             Scanner scanner = new Scanner(System.in);
-            int input;
+            int input=0;
             while(true){
                 System.out.println("Please select from the below");
                 System.out.println("1. For withdraw");
                 System.out.println("2. For deposit");
                 System.out.println("3. For Customer Creation");
                 System.out.println("4. For customer details display");
+                try{
+                    
                 input = scanner.nextInt();
+                String s = String.valueOf(input);
+                String regex = "\\d";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(s);
+                    while (matcher.find()) {
+                        System.out.print(matcher.group());
+                    }
+
+                }catch(InputMismatchException e){
+                    e.printStackTrace();
+                    System.out.println(" \n Please enter the input from 1 to 4");
+                    scanner.nextLine();
+                    continue;
+
+                }
+           
 
                 switch(input){
                     case 1: System.out.println("You have choosen 1. option to withdraw");
