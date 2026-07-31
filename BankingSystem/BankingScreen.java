@@ -40,10 +40,10 @@ public class BankingScreen {
                     }
 
                 }catch(InputMismatchException e){
-                    e.printStackTrace();
+                    // e.printStackTrace();
                     System.out.println(" \n Please enter the input from 1 to 4");
                     scanner.nextLine();
-                    continue;
+                    // continue;
 
                 }
            
