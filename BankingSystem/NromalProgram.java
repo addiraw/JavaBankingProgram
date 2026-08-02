@@ -19,11 +19,15 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 public class NromalProgram {
     
     public static void main(String[] args){
- 
+        Map<Integer, String> map = new LinkedHashMap<>();
+        map.putAll(Map.of(1,"Aditya",2,"Naman",3,"Nia"));
+        Map<Integer,String> map1 = map.entrySet().stream().collect(Collectors.groupingBy(Map.Entry::getKey));
+
     
     }
 } 
