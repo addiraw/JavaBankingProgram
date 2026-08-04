@@ -28,6 +28,8 @@ public class BankingScreen {
                 System.out.println("2. For deposit");
                 System.out.println("3. For Customer Creation");
                 System.out.println("4. For customer details display");
+                System.out.println("5. For customer balace");
+
                 try{
                     
                 input = scanner.nextInt();
@@ -62,6 +64,7 @@ public class BankingScreen {
                     }
                     // System.out.print(deposit);
                     amount = deposit.intiDeposit();
+                    break;
                     case 3: {
                         System.out.println("You have chosen to create customer");
                     if(createCustomer==null){
@@ -72,7 +75,11 @@ public class BankingScreen {
 
                     break;
                     }
-                    case 4: System.out.println("You are chossing the 4th option to see the details");
+                    case 4: {
+                        System.out.println(amount);
+                        break;
+                    }
+                    case 5: System.out.println("You are chossing the 4th option to see the details");
                     // SeeCustomerDetails seeCustomerDetails = new SeeCustomerDetails();
                     // seeCustomerDetails.findCustomer();
                     List<Customer> cusList = createCustomer.customerList;
